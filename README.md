@@ -5,7 +5,7 @@ The first part needs to be exectud separately for each sample (but each sample c
 
 <H2>First phase</H2>
 
-`compute_sites_bed BED_FILE BAM_FILE(s) NAME FR_SECONDSTRAND`
+`java -Xmx48000m -cp jar/compbioLib.jar:jar/compbio.jar:jar/picard.jar scripts.lincs.util.QuantifySplicingEfficiency compute_sites_bed BED_FILE BAM_FILE(s) NAME FR_SECONDSTRAND`
 
 <ul>
 <li>`BED_FILE` is the BED file with the transcript annotations
@@ -93,5 +93,13 @@ and an `OUTNAME.transcriptStats.txt` file with:
   </ul>
  </ul>
  
+ <h3>Sample commands</H3>
+ <p>
+ <ul>
+ <li>
+`java -Xmx48000m -cp jar/compbioLib.jar:jar/compbio.jar:jar/picard.jar scripts.lincs.util.QuantifySplicingEfficiency compute_sites_bed data/MANE.GRCh38.v1.0.refseq_genomic.bed data/Cyto.bam Cyto FR_SECONDSTRAND`</li>
+ <li>`java -Xmx48000m -cp jar/compbioLib.jar:jar/compbio.jar:jar/picard.jar scripts.lincs.util.QuantifySplicingEfficiency compute_sites_bed data/MANE.GRCh38.v1.0.refseq_genomic.bed data/Nuc.bam Nuc FR_SECONDSTRAND`</li>
+ <li>`/home/labs/ulitsky/shared/lib/run.csh scripts.lincs.global.LincRNASplicingAnalysis compute_introns_bed data/MANE.GRCh38.v1.0.refseq_genomic.bed Nuc,Cyto full data/hg38.phyloP100way.bw data/hg38.2bit`</li>
+ </p>
     
 
