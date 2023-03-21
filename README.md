@@ -67,14 +67,14 @@ This will generate `OUTNAME.intronStats.txt` containing the following informatio
 <li>Does this intron overlap some other exon?
 <li>Is the 5’ site derived from a transposable element?
 <li>Is the 3’ site derived from a transposable element?
-<li>Per sample:
+<li>Per sample: (just for introns with at least MIN_READs on each side)
   <ul>
-    <li>Number of reads covering the 5P of the intron
-    <li>Number of reads covering the 3P of the intron
-    <li>Number of reads covering the spliced reads for the intron
-    <li>Splicing efficiency
-    <li>Min-based splicing efficiency
-    <li>Pratio - 
+    <li>Number of reads covering the 5P of the intron (5P)
+    <li>Number of reads covering the 3P of the intron (3P)
+    <li>Number of reads covering the spliced reads for the intron 
+    <li>Splicing efficiency (0.5+Spliced)/(0.5+Spliced+Unspliced_5P+Unspliced_3P)
+    <li>Min-based splicing efficiency (0.5+Spliced)/(0.5+Spliced+2*min(Unspliced_5P,mUnspliced_3P))
+    <li>Pratio - Unspliced_5P/Unspliced_3P
    </ul>
 <li>Total number of spliced reads accross all the samples  
 </ul>
