@@ -98,7 +98,7 @@ and an `OUTNAME.transcriptStats.txt` file with:
  <li>
 `java -Xmx48000m -cp jar/compbioLib.jar:jar/compbio.jar:jar/picard.jar scripts.lincs.util.QuantifySplicingEfficiency compute_sites_bed data/MANE.GRCh38.v1.0.refseq_genomic.bed data/Cyto.bam Cyto FR_SECONDSTRAND`</li>
  <li>`java -Xmx48000m -cp jar/compbioLib.jar:jar/compbio.jar:jar/picard.jar scripts.lincs.util.QuantifySplicingEfficiency compute_sites_bed data/MANE.GRCh38.v1.0.refseq_genomic.bed data/Nuc.bam Nuc FR_SECONDSTRAND`</li>
- <li>`/home/labs/ulitsky/shared/lib/run.csh scripts.lincs.global.LincRNASplicingAnalysis compute_introns_bed data/MANE.GRCh38.v1.0.refseq_genomic.bed Nuc,Cyto full data/hg38.phyloP100way.bw data/hg38.2bit`</li>
+ <li>`java -Xmx48000m -cp jar/compbioLib.jar:jar/compbio.jar:jar/picard.jar scripts.lincs.global.LincRNASplicingAnalysis compute_introns_bed data/MANE.GRCh38.v1.0.refseq_genomic.bed Nuc,Cyto full data/hg38.phyloP100way.bw data/hg38.2bit`</li>
  </p>
     
 
