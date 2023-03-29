@@ -9,7 +9,6 @@ The first part needs to be exectud separately for each sample (but each sample c
 
 <ul>
 <li>`BED_FILE` is the BED file with the transcript annotations
-<li>`SPECIES` is hg19 or mm9
 <li>`BAM_FILE(s)` are .bam file names (comma separated)
 <li>`NAME` is the base name for output files
 <li>`LIBRARY_TYPE` is one of the following: `UNSTRANDED`, `FF_FIRSTSTRAND` - paired-end and both reads are on the + strand (ENCODE data only) `FR_FIRSTSTRAND` - regular dUTP/TruSeq strand specific, `FR_SECONDSTRAND` - single-end stranded or other protocols where the first read is on the + strand
@@ -29,7 +28,7 @@ This pase will generate `NAME.5P.sites.txt` and `NAME.3P.sites.txt` files. Each 
 <H2>Second phase</H2>
 In this phase multiple samples can be processed together
 
-`compute_introns_bed [-minReads MIN_READS] BED_FILE NAME(s) PHYLO_FILE 2BIT_FILE OUTNAME`
+`java -Xmx48000m -cp jar/compbioLib.jar:jar/compbio.jar:jar/picard.jar scripts.lincs.global.LincRNASplicingAnalysis compute_introns_bed [-minReads MIN_READS] BED_FILE NAME(s) PHYLO_FILE 2BIT_FILE OUTNAME`
 
 where:
 <ul>
