@@ -28,11 +28,12 @@ This pase will generate `NAME.5P.sites.txt` and `NAME.3P.sites.txt` files. Each 
 <H2>Second phase</H2>
 In this phase multiple samples can be processed together
 
-`java -Xmx48000m -cp jar/compbioLib.jar:jar/compbio.jar:jar/picard.jar scripts.lincs.global.LincRNASplicingAnalysis compute_introns_bed [-minReads MIN_READS] BED_FILE NAME(s) PHYLO_FILE 2BIT_FILE OUTNAME`
+`java -Xmx48000m -cp jar/compbioLib.jar:jar/compbio.jar:jar/picard.jar:jar/bigWig.jar:jar/log4j-1.2.15.jar scripts.lincs.global.LincRNASplicingAnalysis compute_introns_bed [-minReads MIN_READS] -spliceDir SPLICE_DIRECTORY BED_FILE NAME(s) PHYLO_FILE 2BIT_FILE OUTNAME`
 
 where:
 <ul>
 <li>`MIN_READS` is the minimal number of reads considered per splice site in the transcript-level computation (default 20)
+<li>`SPLICE_DIRECTORY` is the location of the directory with the files `all5ss_GTC_only_with_maxent.txt` and `PSSM3ss`
 <li>`BED_FILE` is the BED file with the transcript annotations
 <li>`NAME(s)` are the base names that were used for the compute_sites above
 <li>`PHYLO_FILE` is the conservation bigWig file (phyloP), e.g., for hg38 <A HREF="http://hgdownload.cse.ucsc.edu/goldenpath/hg38/phyloP100way/hg38.phyloP100way.bw">hg38.phyloP100way.bw</A> from UCSC
@@ -98,7 +99,7 @@ and an `OUTNAME.transcriptStats.txt` file with:
  <li>
 `java -Xmx48000m -cp jar/compbioLib.jar:jar/compbio.jar:jar/picard.jar scripts.lincs.util.QuantifySplicingEfficiency compute_sites_bed data/MANE.GRCh38.v1.0.refseq_genomic.bed data/Cyto.bam Cyto FR_SECONDSTRAND`</li>
  <li>`java -Xmx48000m -cp jar/compbioLib.jar:jar/compbio.jar:jar/picard.jar scripts.lincs.util.QuantifySplicingEfficiency compute_sites_bed data/MANE.GRCh38.v1.0.refseq_genomic.bed data/Nuc.bam Nuc FR_SECONDSTRAND`</li>
- <li>`java -Xmx48000m -cp jar/compbioLib.jar:jar/compbio.jar:jar/picard.jar scripts.lincs.global.LincRNASplicingAnalysis compute_introns_bed data/MANE.GRCh38.v1.0.refseq_genomic.bed Nuc,Cyto full data/hg38.phyloP100way.bw data/hg38.2bit`</li>
+ <li>`java -Xmx48000m -cp jar/compbioLib.jar:jar/compbio.jar:jar/picard.jar:jar/bigWig.jar:jar/log4j-1.2.15.jar scripts.lincs.global.LincRNASplicingAnalysis compute_introns_bed -spliceDir splice/ data/MANE.GRCh38.v1.0.refseq_genomic.bed Nuc,Cyto full data/hg38.phyloP100way.bw data/hg38.2bit`</li>
  </p>
     
 
