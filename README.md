@@ -28,7 +28,7 @@ This pase will generate `NAME.5P.sites.txt` and `NAME.3P.sites.txt` files. Each 
 <H2>Second phase</H2>
 In this phase multiple samples can be processed together
 
-`java -Xmx48000m -cp jar/compbioLib.jar:jar/compbio.jar:jar/picard.jar:jar/bigWig.jar:jar/log4j-1.2.15.jar scripts.lincs.global.LincRNASplicingAnalysis compute_introns_bed [-minReads MIN_READS] -spliceDir SPLICE_DIRECTORY BED_FILE NAME(s) PHYLO_FILE 2BIT_FILE OUTNAME`
+`java -Xmx48000m -cp jar/compbioLib.jar:jar/compbio.jar:jar/picard.jar:jar/bigWig.jar:jar/log4j-1.2.15.jar scripts.lincs.global.LincRNASplicingAnalysis compute_introns_bed [-minReads MIN_READS] -spliceDir SPLICE_DIRECTORY BED_FILE NAME(s) OUTNAME PHYLO_FILE 2BIT_FILE`
 
 where:
 <ul>
