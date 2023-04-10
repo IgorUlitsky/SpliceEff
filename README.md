@@ -89,6 +89,7 @@ and an `OUTNAME.transcriptStats.txt` file with:
     <li>Spliced reads (combining all introns, even those with few reads)</li>
     <li>Unspliced reads (combining all introns, even those with few reads)</li>
     <li>Total reads (combining all introns, even those with few reads)</li>
+    <li>Splicing efficiency of the intron (0.5+Spliced)/(0.5+Spliced+Unspliced_5P+Unspliced_3P)
     <li>Efficiency of the intron with the lowest efficiency (only among introns with at least MIN_READS for both 5P and 3P)</li>
   </ul>
  </ul>
